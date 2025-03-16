@@ -11,7 +11,7 @@ Class Matters is a character-developing STEM organization that provides life ski
 # How to run the project (until properly hosted):
 cd ecomprj
 
-python manage.py runserver
+     python manage.py runserver
 
 Click the link near the bottom
 
@@ -20,8 +20,6 @@ BEFORE EDITING: Please make your own branch and make pull request!
 
 Html pages are under templates\core
 
-Add URL to core\urls_add.py (meant for additional urls so that we do not touch the main file)
-
-     whenever creating new html file. this is under ecomprj\core
+Add URL to core\urls_add.py (meant for additional urls so that we do not touch the main file) whenever creating new html file. this is under ecomprj\core
      
 Django naturally creates test.py so add all unit test to that file. 
