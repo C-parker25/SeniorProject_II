@@ -7,3 +7,14 @@ Class Matters is a character-developing STEM organization that provides life ski
 - Olivia Tyler
 - Carlos Parker
 - Ashanti Cocroft
+
+# How to run the project (until properly hosted):
+cd ecomprj
+python manage.py runserver
+Click the link near the bottom
+
+# Where to find things:
+Html pages are under templates\core
+Add URL to core\urls_add.py (meant for additional urls so that we do not touch the main file)
+     whenever creating new html file. this is under ecomprj\core
+Django naturally creates test.py so add all unit test to that file. 
