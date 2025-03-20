@@ -141,6 +141,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 JAZZMIN_SETTINGS = {
     'site_header': "Class Matters",
     'site_brand': "STEM Like Me",
-    'site_logo': "static/images/classmatterslogopaypal.png",
+    'site_logo': os.path.join(BASE_DIR, "static", "images"),
     'copyright': "Class Matters",
 }
