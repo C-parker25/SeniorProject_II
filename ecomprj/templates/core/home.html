@@ -3,16 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-Compatible" content="ie=edge">
-    <meta name="description" content="" />
+    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="" />
-    <meta property="og:type" content="" />
-    <meta property="og:url" content="" />
-    <meta property="og:image" content="" />
-    <title>Document</title>
+    <title>Class Matters STEM Like Me Store</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: black;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 30px;
+            background-color: black;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .navbar .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-buttons button {
+            padding: 6px 14px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .login-btn {
+            background: none;
+            color: white;
+        }
+
+        .signup-btn {
+            background-color: #345e87;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .basic {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .basic h1 {
+            font-size: 32px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .basic p {
+            font-size: 18px;
+            margin: 10px 0;
+            color: white;
+        }
+
+        .basic button {
+            margin-top: 20px;
+            background-color: #345e87;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .what-section {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: black;
+            color: white;
+        }
+
+        .what-section img {
+            max-width: 90%;
+            width: 600px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .what-section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .what-section p {
+            font-size: 17px;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+    </style>
 </head>
 <body>
-    <h1>Class Matters STEM Like Me Store</h1>
-    <input type="color">
+
+    <div class="navbar">
+        <div class="logo">STEM Like Me</div>
+        <div class="nav-links">
+            <a href="#">Who We Are</a>
+            <a href="#">Who We Help</a>
+            
+            <a href="#">Donate</a>
+            <a href="#">Get Involved</a>
+            <a href="#">About</a>
+            <a href="#">FAQ</a>
+        </div>
+        <div class="nav-buttons">
+            <button class="login-btn">Log in</button>
+            <button class="signup-btn">Sign up</button>
+        </div>
+    </div>
+
+    <div class="basic">
+        <h1>Class Matters INC.</h1>
+        <p>Empowering Our Future, One Teen at a Time</p>
+        <button>Support Now</button>
+    </div>
+
+    <div class="what-section">
+        <img src="https://class-matters.org/wp-content/uploads/2023/03/Class-Matters-Events-Verizon-Field-Trip-2016-0063-e1680021278815.jpg" alt="Students">
+        <h2>What is Class Matters?</h2>
+        <p>
+            Founded in August of 2010, Class Matters Inc., a remote 501(c)3 organization that strives to inspire change through its vision of “Empowering, Our Future, One Teen at a Time.” Its mission is to develop and nurture future engineers, entrepreneurs, and leaders who embrace their potential and enable others’ full potential. Class Matters uses its seven pillars to create and/or strengthen opportunities that build and prepare a pipeline of talent for overall workforce-ready or college-ready youth in Science, Technology, Engineering and/or Math (STEM) plus medicine for middle and high school students.
+        </p>
+    </div>
+
 </body>
 </html>
+
