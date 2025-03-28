@@ -144,3 +144,11 @@ JAZZMIN_SETTINGS = {
     'site_logo': os.path.join(BASE_DIR, "static", "images"),
     'copyright': "Class Matters",
 }
+
+AUTHENTICATION_BACKENDS = {
+    'django.contrib.auth.backends.ModelBackend',
+}
+LOGIN_REDIRECT_URL = 'home'  # Redirect after login
+LOGOUT_REDIRECT_URL = 'login'  # Redirect after logout
+
+AUTH_USER_MODEL = 'userauths.User'
