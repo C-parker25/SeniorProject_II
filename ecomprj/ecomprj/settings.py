@@ -151,4 +151,4 @@ AUTHENTICATION_BACKENDS = {
 LOGIN_REDIRECT_URL = 'home'  # Redirect after login
 LOGOUT_REDIRECT_URL = 'login'  # Redirect after logout
 
-AUTH_USER_MODEL = 'userauths.User'
+AUTH_USER_MODEL = 'auth.User'

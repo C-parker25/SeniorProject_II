@@ -29,7 +29,7 @@ def register_view(request):
     }
             
 
-def index(rewuest):
+def index(request):
     return HttpResponse("welcome to my shop")
 
 def login_view(request):
