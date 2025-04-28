@@ -1,5 +1,106 @@
-{% block content %}
-
 <!-- Page Inherited as we move throughout website-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-Compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Matters STEM Like Me Store</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace,;
+            background: rgb(11, 11, 11);
+        }
 
-{% endblock %}
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            background-color: rgb(8, 9, 9);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .navbar .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-buttons button {
+            padding: 6px 14px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .login-btn {
+            background: none;
+            color: white;
+        }
+
+        .basic {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .basic h1 {
+            font-size: 32px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .basic p {
+            font-size: 18px;
+            margin: 10px 0;
+            color: white;
+        }
+
+        .basic button {
+            margin-top: 20px;
+            background-color: #090909;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">STEM Like Me</div>
+        <div class="nav-links">
+            <a href="#">About</a>
+            <a href="#">Parent & Community Resources</a>
+            <a href="#">Volunteer</a>
+            <a href="#">Donate & Subscribe</a>
+        </div>
+    </div>
+    {% block content %}
+    {% endblock %}
+    <div class="why-image">
+    <!--img src="https://i.groupme.com/500x500.png.6b9af4fddb614f729be7a159a9811e03" alt="RoboMan"-->
+    </div>
+</body>
+</html>
+
