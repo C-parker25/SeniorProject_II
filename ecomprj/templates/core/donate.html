@@ -1,0 +1,152 @@
+{% extends "partials/base.html" %}
+
+{% block content %}
+{% load static %}
+
+<style>
+
+    .header-bg {
+        margin-top: 2px;
+        background-image: url("{% static 'images/ClassMatters_4-22-25_178.jpg' %}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 400px;
+        width: 100%;
+        position: relative;
+    }
+
+    .overlay-text {
+        position: absolute;
+        bottom: 30px;
+        left: 30px;
+        color: #fff;
+        font-size: 2rem;
+        font-weight: bold;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 10px 20px;
+        border-radius: 10px;
+    }
+
+    .support-header {
+        text-align: center;
+        font-size: 2rem;
+        margin: 40px 0 20px;
+        color: #fff;
+    }
+
+    .support-options {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 50px;
+        flex-wrap: wrap;
+    }
+
+    .support-box {
+        background: #fff;
+        color: #000;
+        width: 250px;
+        padding: 30px;
+        border-radius: 12px;
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+
+    .support-box:hover {
+        transform: scale(1.05);
+    }
+
+    .support-box a {
+        display: inline-block;
+        margin-top: 15px;
+        text-decoration: none;
+        background: #6277a3;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 8px;
+    }
+
+    .donation-section {
+        position: relative;
+        max-width: 700px;
+        margin: 0 auto 40px;
+        background: #6277a3;
+        color: #fff;
+        padding: 40px 40px 10px;
+        border-radius: 12px;
+    }
+
+    .donation-section h3 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .donation-section p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    form {
+        margin-top: 30px;
+    }
+
+    label {
+        display: inline;
+        margin: 15px 0 5px;
+    }
+    s
+    #thank-you-message {
+        text-align: center;
+        margin-top: 20px;
+    }
+</style>
+
+<div class="header-bg">
+  <div class="overlay-text">Class Matters Would Love Your Support!</div>
+</div>
+
+<h2 class="support-header">Two Ways You Can Support Us Financially</h2>
+
+<div class="support-options">
+    <div class="support-box">
+        <h3>Donate Now</h3>
+        <p>Make a direct contribution to help us continue our mission and outreach.</p>
+        <a href="#donate">Donate</a>
+    </div>
+    <div class="support-box">
+        <h3>Shop Our Store</h3>
+        <p>Purchase merchandise—proceeds go toward supporting our community initiatives.</p>
+        <a href="core/shop.html">Shop Now</a>
+    </div>
+</div>
+
+<div class="donation-section" id="donate">
+    <h3>Every Dollar Makes a Difference</h3>
+    <p>Class Matters is dedicated to empowering underserved communities through education, mentorship, and advocacy. Your donations directly fund:</p>
+    <ul>
+        <li>Workshops and training programs for youth and families</li>
+        <li>Essential supplies and scholarships</li>
+        <li>Community events that foster unity and awareness</li>
+    </ul>
+     
+        <form method="POST">
+          {%csrf_token %}
+          {{form.as_p}}
+          <div style="text-align: center;">
+          <button type="submit">Donate Now</button>
+          </div>
+        </form>
+
+         {% if success %}
+        <div id="thank-you-message" style="display: none;">
+          <h3>Thank you for your donation!</h3>
+          <p>Your generosity is making a difference.</p>
+        </div>
+        {% endif %}
+      <div style="position:absolute; z-index: 10; right: 0px; top: 50px; padding-left:120px; height:100px;">
+        <img src="https://i.groupme.com/500x500.png.6b9af4fddb614f729be7a159a9811e03" alt="RoboMan">
+    </div>
+</div>
+{% endblock %}
+

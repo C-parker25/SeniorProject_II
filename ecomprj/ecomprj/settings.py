@@ -123,9 +123,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Where all of our documents, bootstraps, etc will be
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR,'staticfiles')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
 
 MEDIA_URL = '/media/'
 
@@ -148,7 +148,15 @@ JAZZMIN_SETTINGS = {
 AUTHENTICATION_BACKENDS = {
     'django.contrib.auth.backends.ModelBackend',
 }
-LOGIN_REDIRECT_URL = 'home'  # Redirect after login
-LOGOUT_REDIRECT_URL = 'login'  # Redirect after logout
+
+# email settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'your_email@example.com'
+EMAIL_HOST_PASSWORD = 'your_app_password_or_real_password'
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
 
 AUTH_USER_MODEL = 'auth.User'

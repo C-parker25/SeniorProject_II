@@ -1,0 +1,90 @@
+{% extends "partials/base.html" %}
+{%block content%}
+<style>
+.getinvolved {
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fefefe;
+  font-size: 25px;
+  padding: 0px 20px;
+}
+
+.body{
+    display: flex;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fefefe;
+  padding: 0px 20px;
+    
+}
+
+.involve-options {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: center;
+}
+
+.involve-box {
+  background: rgb(98, 119, 163);
+  width: 90%;
+  max-width: 1000px;
+  height: 500px;
+  padding: 40px;
+  text-decoration: none;
+  color: #fefefe;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.involve-box h3 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.hover-text {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-size: 18px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.involve-box:hover {
+  background: rgb(72, 82, 104);
+  transform: scale(1.02);
+}
+
+.involve-box:hover .hover-text {
+  opacity: 1;
+}
+</style>
+
+<section class="getinvolved">
+<h1><strong>Get Involved</strong></h1>
+<div><p>Browse below for ways to get involved!</p></div>
+</section>
+
+<section class="body">
+<div class="involve-options">
+    <a href="{%url 'core:donate'%}" class="involve-box">
+    <h3>Donate</h3>
+    <p class="hover-text">Support our mission with a one-time or recurring donation.</p>
+    </a>
+    <a href="{%url 'core:volunteer'%}" class="involve-box">
+    <h3>Volunteer</h3>
+    <p class="hover-text">Lend your time and skills to help us make an impact.</p>
+    </a>
+    <a href="{%url 'core:subscribe'%}" class="involve-box">
+    <h3>Subscribe</h3>
+    <p class="hover-text">Stay updated with our latest news and opportunities.</p>
+    </a>
+</div>
+</section>
+
+{%endblock%}
