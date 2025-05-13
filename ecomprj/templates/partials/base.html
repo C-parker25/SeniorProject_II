@@ -10,7 +10,8 @@
     <style>
         body {
             margin: 0;
-            font-family: 'Courier New', Courier, monospace,;
+            font-family: 'Segoe UI', sans-serif;
+            color: white;
             background: rgb(11, 11, 11);
         }
 
@@ -18,7 +19,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 30px;
+            padding: 5px 20px;
             background-color: rgb(8, 9, 9);
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
@@ -52,11 +53,6 @@
             font-weight: bold;
         }
 
-        .login-btn {
-            background: none;
-            color: white;
-        }
-
         .basic {
             text-align: center;
             padding: 60px 20px;
@@ -83,24 +79,59 @@
             border-radius: 5px;
             font-size: 16px;
         }
+
+        li.dropdown {
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #3d4e78;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {background-color: #617baa}
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+}
     </style>
 </head>
 <body>
 
-    <div class="navbar">
-        <div class="logo">STEM Like Me</div>
+    <div class="navbar" style="position: relative;">
+        <div class="logo">
+            <a href="{%url 'core:index'%}">
+            <img width="150" src="https://class-matters.org/wp-content/uploads/2013/04/classmatterslogopaypal.png" class="custom-logo" alt="Class Matters"></a>
+        </div>
         <div class="nav-links">
-            <a href="#">About</a>
-            <a href="#">Parent & Community Resources</a>
-            <a href="#">Volunteer</a>
-            <a href="#">Donate & Subscribe</a>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Support</a>
+                <div class="dropdown-content">
+                <a href="{%url 'core:donate'%}">Donate</a>
+                <a href="#">Shop</a>
+                </div>
+            </li>
+            <a href="{%url 'core:volunteer'%}">Volunteer</a>
+            <a href="{%url 'core:subscribe'%}">Subscribe</a>
         </div>
     </div>
     {% block content %}
     {% endblock %}
-    <div class="why-image">
-    <!--img src="https://i.groupme.com/500x500.png.6b9af4fddb614f729be7a159a9811e03" alt="RoboMan"-->
-    </div>
+    <!--div class="why-image">
+    <img src="https://i.groupme.com/500x500.png.6b9af4fddb614f729be7a159a9811e03" alt="RoboMan">
+    </div-->
 </body>
 </html>
 

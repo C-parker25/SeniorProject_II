@@ -1,22 +1,174 @@
 {% extends "partials/base.html" %}
 
 {% block content %}
-<div class="flex items-center justify-center min-h-screen bg-gray-100">
-    <div class="w-full max-w-md p-6 bg-white shadow-md rounded-lg">
-        <h2 class="text-2xl font-bold text-center mb-4">Login</h2>
-        <form method="post">
-            {% csrf_token %}
-            <div class="mb-4">
-                <label for="username" class="block text-gray-700">Username</label>
-                <input type="text" name="username" id="username" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-            </div>
-            <div class="mb-4">
-                <label for="password" class="block text-gray-700">Password</label>
-                <input type="password" name="password" id="password" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-            </div>
-            <button type="submit" class="w-full bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Login</button>
-        </form>
-        <p class="mt-4 text-center text-gray-600">Don't have an account? <a href="{% url 'register' %}" class="text-blue-500">Sign up</a></p>
+<style>
+.ctct-inline-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; 
+  padding-left: 20px;
+  background-color: rgba(0, 0, 0, 0.85); 
+  color:white-space;
+}
+
+.ctct-form-container {
+  background-color: rgb(98, 119, 163);
+  color: white;
+  padding: 20px 40px;
+  border-radius: 0px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  max-width: 600px;
+  width: 90%;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 0 6px #444b4d);
+}
+
+.ctct-form-container:hover {
+  transform: scale(1.02);
+}
+
+.ctct-form-element {
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+}
+
+.ctct-form-label {
+  font-weight: bold;
+}
+
+.ctct-form-button {
+  background-color: rgb(112, 186, 235);
+  color: black;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 20px auto 0 auto;
+  transition: background 0.3s ease;
+}
+
+.ctct-form-button:hover {
+  background-color: #90d4f4;
+}
+
+#ctct-consent{
+  font-size: 10px;
+  margin-top: 10px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+
+.body-img img{
+    display: flex;
+    max-width: 90%;
+    height:500px;
+    padding: 10px;
+    border-radius: 10px;
+    animation: pulseGlow 2s infinite;
+    filter: drop-shadow(0 0 6px #72bcd4);
+    transition: transform 0.3s ease;
+}
+
+ @keyframes pulseGlow {
+        0%, 100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+        50% {
+            transform: scale(1.1);
+            opacity: 0.7;
+        }
+    }
+</style>
+{% if success %}
+    <div class="alert alert-success" style="text-align:center; color: green; margin-bottom: 20px;">
+        Thanks for subscribing!
     </div>
+{% endif %}
+
+<div class="ctct-inline-form">
+    <div class="body-img" style="padding-right:10px; transform: scaleX(-1);">
+ <img src="https://i.groupme.com/574x1800.png.a8788f49b6c84d7ba0c18cdf9c95f5dd" alt="RoboLady">
 </div>
+
+    <div class="ctct-form-container">
+        <form class="ctct-form" method="post" autocomplete="on">
+            {% csrf_token %}
+            <h2 class="ctct-form-header"> Subscribe to Our Newsletter Today!</h2>
+            <p class="ctct-form-text">Get updates from Class Matters in your inbox.</p>
+
+            <div id="email_address_field" class="ctct-form">
+                <label id="email_address_label_1" for="email_address_1" class="ctct-form-label">Email Address</label>
+                <input class="ctct-form-element" id="email_address_1" type="email" name="email_address" maxlength="80" required>
+            </div>
+
+            <div id="first_name_field" class="ctct-form">
+                <label id="first_name_label_1" for="first_name_1" class="ctct-form-label">First Name</label>
+                <input class="ctct-form-element" id="first_name_1" type="text" name="first_name" maxlength="50">
+            </div>
+
+            <div id="last_name_field" class="ctct-form">
+                <label id="last_name_label_1" for="last_name_1" class="ctct-form-label">Last Name</label>
+                <input class="ctct-form-element" id="last_name_1" type="text" name="last_name" maxlength="50">
+            </div>
+
+            <div id="ctct-consent">
+                <input type="checkbox" name="consent" id="consent">
+                <label for="consent" class="ctct-consent-text">
+                    I agree to receive marketing emails from Class Matters Inc., http://class-matters.org.
+                    I understand I can revoke my consent to receive emails by following a link in every email.
+                </label>
+            </div>
+
+            <div style="text-align:center;">
+                <button type="submit" class="ctct-form-button">Sign Up!</button>
+            </div>
+        </form>
+    </div>
+<div class="body-img" style="padding:10px;">
+ <img src="https://i.groupme.com/574x1800.png.a8788f49b6c84d7ba0c18cdf9c95f5dd" alt="RoboLady">
+</div>
+
 {% endblock %}
+
+<!-- HTML for incase platform switch
+
+<div class="ctct-inline-form" >
+    <div class="ctct-form-container">
+        <form class="ctct-form" autocomplete="on">
+            <h2 class="ctct-form-header"> Subscribe to Our Newsletter Today!</h2>
+            <p class="ctct-form-text">Get updates from Class Matters in your inbox.</p>
+            <div id="email_address_field" class="ctct-form">
+                <label id="email_address_label_1" for="email_address_1" class="ctct-form-label">Email Address</label>
+                <input class="ctct-form-element" id="email_address_1" type="email" name="email_address" value maxlength="80">
+            </div>
+            <div id="first_name_field" class="ctct-form">
+                <label data-qe-id="form-label-first-name" id="first_name_label_1" for="first_name_1" class="ctct-form-label ">First Name</label>
+                <input class="ctct-form-element" id="first_name_1" type="text" name="first_name" value maxlength="50">
+            </div>
+            <div id="last_name_field" class="ctct-form">
+                <label id="last_name_label_1" for="last_name_1" class="ctct-form-label ">Last Name</label>
+                <input class="ctct-form-element" id="last_name_1" type="text" name="last_name" value maxlength="50">
+            </div>
+            <div id="ctct-consent">
+                <input type="checkbox" name="consent" id="consent">
+                <label for="consent" class="ctct-consent-test">
+                    I agree to recieve marketing emails from
+                    Class Matters Inc., http://class-matters.org. I understand I
+                    can revoke my consent to recieve emails by following a link located in every email.
+                </label>
+            </div>
+        <div style="text-align:center;"> <button type="submit" class="ctct-form-button">Sign Up!</button></div>
+        </form>
+    </div>
+</div>-->

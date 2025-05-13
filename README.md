@@ -23,3 +23,15 @@ Html pages are under templates\core
 Add URL to core\urls_add.py (meant for additional urls so that we do not touch the main file) whenever creating new html file. this is under ecomprj\core
      
 Django naturally creates test.py so add all unit test to that file. 
+
+# Access Admin
+Before host: runserver then at the end of the link append
+
+          /admin
+
+
+Login: username: classmatters
+     password: stemlikeme
+
+
+The major classes are grouped individiually.

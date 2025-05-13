@@ -1,13 +1,19 @@
 from django import forms
+from .models import Subscription, VolunteerInterest, Donation
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 
-class UserRegisterForm(UserCreationForm):
-    username = forms.CharField(widget=forms.TextInput(attrs={"placeholder":"Username"}))
-    email = forms.EmailField(widget=forms.EmailInput(attrs={"placeholder":"Email"}))
-    password1 = forms.CharField(widget=forms.PasswordInput(attrs={"placeholder":"Password"}))
-    password2 = forms.CharField(widget=forms.PasswordInput(attrs={"placeholder":"Confirm Password"}))
-
+class SubscriptionForm(forms.ModelForm):
     class Meta:
-        model = User
-        fields = ['username', 'email', 'password1', 'password2']
+        model = Subscription
+        fields = ['email', 'first_name', 'last_name', 'consent']
+
+class VolunteerInterestForm(forms.ModelForm):
+    class Meta:
+        model = VolunteerInterest
+        fields = ['first_name', 'last_name', 'email', 'phone', 'occupation', 'discover', 'interest_area','additional_info']
+
+class DonationForm(forms.ModelForm):
+    class Meta:
+        model = Donation
+        fields = ['first_name','last_name', 'email', 'amount', 'recurring', 'quick_subscribe']
